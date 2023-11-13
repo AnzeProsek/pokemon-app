@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import { Link, useScrollToTop } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const scrollToTop = () => {
