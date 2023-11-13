@@ -263,7 +263,9 @@ function PokemonDetail() {
                       <div
                         className="stat-line"
                         style={{
-                          width: `${parseInt(stat.base_stat, 10)}px`,
+                          width: `${
+                            (parseInt(stat.base_stat, 10) / 300) * 200
+                          }px`,
                           backgroundColor:
                             stat.base_stat < 50
                               ? "#f34444"
