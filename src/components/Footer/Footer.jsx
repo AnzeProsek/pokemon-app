@@ -1,5 +1,4 @@
 import React from "react";
-import images from "../../constants/images";
 import "./Footer.scss";
 import { Link, useScrollToTop } from "react-router-dom";
 

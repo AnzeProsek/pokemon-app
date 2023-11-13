@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import images from "../../constants/images";
+import constants from "../../constants/constants";
 import { Link } from "react-router-dom";
 
 import "./Navbar.scss";
@@ -9,7 +9,7 @@ function Navbar() {
     <div className="navbar">
       <div className="navbar-logo">
         <Link to="/">
-          <img src={images.smartdex} alt="logo"></img>
+          <img src={constants.smartdex} alt="logo"></img>
         </Link>
       </div>
       <ul className="navbar-links">
