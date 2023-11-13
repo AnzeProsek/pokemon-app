@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import constants from "../../constants/constants";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -39,7 +40,7 @@ function PokemonList() {
       async function fetchPokemonList() {
         try {
           const response = await fetch(
-            "https://pokeapi.co/api/v2/pokemon?limit=151"
+            `https://pokeapi.co/api/v2/pokemon?limit=${constants.howManyPokemon}`
           );
           if (response.ok) {
             const data = await response.json();

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import constants from "../../constants/constants";
 import Navbar from "../../components/Navbar/Navbar";
 import LoadingPlaceholder from "../../components/LoadingPlaceholder/LoadingPlaceholder";
 import { usePokemonContext } from "../../contexts/PokemonContext/PokemonContext";
@@ -99,7 +100,7 @@ function Ability() {
                       (pokemon) =>
                         parseInt(
                           pokemon.pokemon.url.split("/").slice(-2, -1)[0]
-                        ) <= 151
+                        ) <= constants.howManyPokemon
                     )
                     .map((pokemon) => (
                       <ul

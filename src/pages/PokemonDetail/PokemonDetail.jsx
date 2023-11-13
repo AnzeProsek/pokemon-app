@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import constants from "../../constants/constants";
 import { useFavoritesContext } from "../../contexts/FavoritesContext/FavoritesContext";
 import { usePokemonContext } from "../../contexts/PokemonContext/PokemonContext";
 import Navbar from "../../components/Navbar/Navbar";
@@ -114,7 +115,9 @@ function PokemonDetail() {
     if (evolutionChain && evolutionChain.chain) {
       createChain(evolutionChain, evolutionChain.chain, finalArray, 1);
     }
-    const filteredData = finalArray.filter((element) => element.id <= 151);
+    const filteredData = finalArray.filter(
+      (element) => element.id <= constants.howManyPokemon
+    );
     setChainInfo(filteredData);
   }, [evolutionChain]);
 
