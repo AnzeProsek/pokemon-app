@@ -1,0 +1,50 @@
+.favorites {
+  //background-image: url("../../assets/pokeball_pattern2.PNG");
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  min-height: 100vh;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  background: #3a3939;
+  background-image: linear-gradient(#4f4d4d, #333);
+}
+
+.search-bar {
+  padding: 15px;
+  margin-right: 2rem;
+  width: 15%;
+
+  input {
+    padding: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+  }
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.no-favorites {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-favorites-text {
+  font-style: italic;
+}
+
+@media screen and (max-width: 650px) {
+  .search-bar {
+    width: 25%;
+  }
+}

@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.pokemon-name {
+  color: black;
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: capitalize;
+}

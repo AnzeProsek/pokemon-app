@@ -1,0 +1,92 @@
+.ability {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ability-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 1rem;
+  background-image: linear-gradient(to top, #edf0f4 0%, white 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.ability-card-name-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ability-card-name {
+  text-transform: capitalize;
+}
+
+.ability-card-description {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.ability-carriers {
+  padding: 10px;
+}
+
+.carriers-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrier-list-text p {
+  border-bottom: 1px solid black;
+}
+
+.ability-carriers-list {
+  margin: 0;
+  padding: 0;
+}
+
+.ability-carriers-list-item {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 20px;
+  }
+}
+
+.ability-carriers-list-item-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  p {
+    font-style: italic;
+    color: black;
+  }
+  p:visited {
+    color: black;
+  }
+  p:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .ability-card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ability-card {
+    width: 90%;
+  }
+}
