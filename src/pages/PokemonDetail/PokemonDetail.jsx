@@ -264,7 +264,7 @@ function PokemonDetail() {
                         className="stat-line"
                         style={{
                           width: `${
-                            (parseInt(stat.base_stat, 10) / 300) * 200
+                            (parseInt(stat.base_stat, 10) / 255) * 200
                           }px`,
                           backgroundColor:
                             stat.base_stat < 50
@@ -290,6 +290,7 @@ function PokemonDetail() {
               </div>
             </div>
             <div className="evolution-outer">
+              {console.log(chainInfo)}
               {chainInfo.length > 1 &&
               !chainInfo.every(
                 (element) => element.stage === chainInfo[0].stage

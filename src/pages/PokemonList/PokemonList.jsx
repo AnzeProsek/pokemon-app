@@ -36,37 +36,34 @@ function PokemonList() {
   const [selectedType, setSelectedType] = useState("default");
 
   useEffect(() => {
-    if (pokemonData.length === 0) {
-      async function fetchPokemonList() {
-        try {
-          const response = await fetch(
-            `https://pokeapi.co/api/v2/pokemon?limit=${constants.howManyPokemon}`
+    async function fetchPokemonList() {
+      try {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon?limit=${constants.howManyPokemon}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+          const results = data.results;
+          const detailedPokemonList = await Promise.all(
+            results.map(async (pokemon) => {
+              const response = await fetch(pokemon.url);
+              if (response.ok) {
+                return response.json();
+              }
+              return null;
+            })
           );
-          if (response.ok) {
-            const data = await response.json();
-            const results = data.results;
-            const detailedPokemonList = await Promise.all(
-              results.map(async (pokemon) => {
-                const response = await fetch(pokemon.url);
-                if (response.ok) {
-                  return response.json();
-                }
-                return null;
-              })
-            );
-            setPokemonData(detailedPokemonList);
-            setLoading(false);
-          }
-        } catch (error) {
-          console.error("Error fetching Pokémon list:", error);
+          setPokemonData(detailedPokemonList);
           setLoading(false);
         }
+      } catch (error) {
+        console.error("Error fetching Pokémon list:", error);
+        setLoading(false);
       }
-      fetchPokemonList();
-    } else {
-      setLoading(false);
     }
-  }, [pokemonData, setPokemonData]);
+    fetchPokemonList();
+  }, []);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
